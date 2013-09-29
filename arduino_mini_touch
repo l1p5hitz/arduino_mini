@@ -1,0 +1,85 @@
+//Code for Arduino Mini with touch sensor
+
+int sensorPin = A0;    // select the input pin for the potentiometer
+int pinArray[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11};	//output pins in array
+int count = 0;		//variable for loop control
+int sensorValue = 0;	//variable for analog input
+
+void setup(){
+  // we make all the declarations at once
+  for (count=0;count<10;count++) {
+    pinMode(pinArray[count], OUTPUT);
+  }
+}
+
+void loop() {
+  // read the value from the sensor:
+  sensorValue = analogRead(sensorPin);
+
+//if value is in certain range, light up appropriate amounts of lights
+    
+  if (sensorValue >= 1020){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], HIGH);
+  }}
+  else if (sensorValue >= 918){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<9;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue >= 816){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<8;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue >= 714){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<7;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue >= 612){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<6;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}  
+  else if (sensorValue >= 510){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<5;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue >= 408){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<4;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue >= 306){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<3;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue >= 204){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<2;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue >= 102){
+    for (count=0;count<10;count++){
+      digitalWrite(pinArray[count], LOW);}
+    for (count=0;count<1;count++){
+    digitalWrite(pinArray[count], HIGH);
+    }}
+  else if (sensorValue <= 100){
+    for (count=0;count<10;count++){
+    digitalWrite(pinArray[count], LOW);
+    }}
+}
